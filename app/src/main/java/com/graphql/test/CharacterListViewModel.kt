@@ -30,7 +30,7 @@ class CharacterListViewModel: ViewModel() {
 
     private suspend fun loadPage() {
         Log.d("GraphQL", "Loading page: $nextPage")
-        val response = apolloClient.query(CharactersRequestQuery(Optional.present(nextPage))).execute()
+        val response = apolloClient
         Log.d("GraphQL", "Response data: ${response.data?.toString()}")
 
         response.data?.characters?.results?.let { results ->

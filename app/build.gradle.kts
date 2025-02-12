@@ -66,9 +66,3 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
-
-apollo {
-    service("service") {
-        packageName.set("com.graphql.test")
-    }
-}

@@ -13,7 +13,7 @@ class CharacterDetailsViewModel: ViewModel() {
 
     fun loadCharacter(id: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val response = apolloClient.query(CharacterRequestQuery(id)).execute()
+            val response = apolloClient
             response.data?.let { data ->
                 state.update { it.copy(
                     isLoading = false,
